@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
     return (
         <div className="min-h-screen flex items-center justify-center">
@@ -21,10 +23,12 @@ export default function Hero() {
 
                 {/* Right side for image */}
                 <div className="w-1/2 flex justify-center items-center overflow-hidden px-5">
-                    <img 
-                        src="/smeagol.png" 
-                        alt="Smeagol" 
-                        className="w-full h-[410px] object-cover rounded-lg shadow-lg"
+                    <Image
+                        src="/smeagol.png"
+                        alt="Smeagol"
+                        width={1000} // You can adjust the width here
+                        height={1000} // Height of the image
+                        className="object-cover rounded-lg shadow-lg w-full h-[430px]"
                     />
                 </div>
             </div>
