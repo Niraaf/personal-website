@@ -1,11 +1,10 @@
-// components/Hero.js
 export default function Hero() {
     return (
         <div className="min-h-screen flex items-center justify-center">
             {/* Flex container for text and image */}
-            <div className="flex w-full max-w-7xl mx-auto px-4">
+            <div className="flex w-full mx-auto px-4">
                 {/* Left side for text */}
-                <div className="flex flex-col justify-center w-1/2 space-y-6 text-left">
+                <div className="flex flex-col justify-center w-1/2 text-left px-5">
                     <h1 className="text-7xl font-extrabold mb-4">
                         Farin Soriano
                     </h1>
@@ -21,9 +20,12 @@ export default function Hero() {
                 </div>
 
                 {/* Right side for image */}
-                <div className="w-1/2 flex justify-center">
-                    A work in progress! :3
-                    {/* Image will go here */}
+                <div className="w-1/2 flex justify-center items-center overflow-hidden px-5">
+                    <img 
+                        src="/smeagol.png" 
+                        alt="Smeagol" 
+                        className="w-full h-[410px] object-cover rounded-lg shadow-lg"
+                    />
                 </div>
             </div>
         </div>

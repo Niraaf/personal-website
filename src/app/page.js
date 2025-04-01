@@ -1,9 +1,16 @@
 import Hero from '@/components/Hero';
+import About from '@/components/About';
 
 export default function Home() {
   return (
-    <div>
-      <Hero />
+    <div className="flex flex-col justify-center items-center max-w-5xl mx-auto">
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+
     </div>
   );
 }

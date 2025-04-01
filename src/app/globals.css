@@ -1,6 +1,10 @@
 /* globals.css */
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Default (Light Mode) */
 :root {
   --background: #F8F5E9;
@@ -40,8 +44,29 @@ body {
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+.about-section {
+  background: var(--secondary-accent);
+  color: var(--accent);
+}
+
 nav,
 button {
   background: var(--accent);
   color: var(--background);
+}
+
+/* Set the width of the scrollbar */
+::-webkit-scrollbar {
+  width: 15px; /* Width of the scrollbar */
+}
+
+/* Customize the thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  border-radius: 5px; 
+  transition: background-color 0.3s ease-in-out; /* Smooth transition for color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: darkred; /* Darker red when hovered */
 }
