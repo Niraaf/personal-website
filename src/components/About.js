@@ -23,8 +23,8 @@ export default function About() {
                     name="Hobbies & Interests"
                     bulletPoints={[
                         "Journaling since 2017",
-                        "Playing anime openings on the piano",
-                        "Playing Genshin Impact",
+                        "Playing classical pieces and anime songs on the piano",
+                        "Co-op video games",
                         "Exploring different boba shops",
                         "Learning multiple languages—spoken, not programming!",
                         "Mechanical keyboards"
@@ -36,6 +36,7 @@ export default function About() {
                         "I love running!",
                         "Calisthenics enthusiast",
                         "Part of UCI's roundnet (spike ball) club",
+                        "Trying to do a handstand"
                     ]}
                 />
                 <AboutCard

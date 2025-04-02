@@ -13,7 +13,7 @@ export default function Hero() {
                     <p className="text-3xl font-medium mb-6">
                         Aspiring Software Engineer, Web Developer, Innovator.
                     </p>
-                    <p className="text-xl mb-8 animate__animated animate__fadeIn animate__delay-3s">
+                    <p className="text-xl mb-8">
                         Creating tools that simplify daily life and help keep things organized. Join me on my journey to build a more efficient future!
                     </p>
                     <button className="px-6 py-2 bg-blue-800 text-white font-semibold rounded-full">

@@ -22,7 +22,7 @@ export default function AboutCard({ name, bulletPoints }) {
                 </div>
 
                 {/* Back of card */}
-                <div className="absolute w-full h-full p-8 bg-[var(--accent)] rounded-3xl flex flex-col justify-center items-center rotate-y-180 backface-hidden">
+                <div className="w-full h-full p-8 bg-[var(--accent)] rounded-3xl flex flex-col justify-center items-center rotate-y-180 backface-hidden">
                     <ul className="list-disc pl-5">
                         {bulletPoints.map((point, index) => (
                             <li key={index} className="text-lg">{point}</li>

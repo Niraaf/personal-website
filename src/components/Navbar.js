@@ -41,7 +41,7 @@ export default function Navbar() {
       setVisible(true);
     } else {
       mouseNearTopRef.current = false;
-      if (currScrollY.current > prevScrollY.current) {
+      if (currScrollY.current > prevScrollY.current && currScrollY.current > 100) {
         setVisible(false);
       }
     }
@@ -59,7 +59,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 p-4 rounded-full text-sm w-[400px] z-50 transition-all duration-400 ease-in-out shadow-lg ${visible ? "translate-y-0 w-[500px]" : "-translate-y-[200%]"}`}>
+      <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 p-4 rounded-full text-sm w-[300px] z-50 transition-all duration-400 ease-in-out shadow-lg ${visible ? "translate-y-0 w-[500px]" : "-translate-y-[200%]"}`}>
         <div className="container mx-auto flex items-center justify-between px-4">
           <ul className="flex space-x-8 w-full justify-center">
             <li className="ease-in-out transition transform">
