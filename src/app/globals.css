@@ -22,10 +22,10 @@ html {
 }
 
 [data-theme="dark"] {
-  --background: #121212;
-  --foreground: #1be0d0;
-  --accent: #db9a18;
-  --secondary-accent: #F1E4C3;
+  --background: #1D1616;
+  --foreground: #D84040;
+  --accent: #EEEEEE;
+  --secondary-accent: #8E1616;
 }
 
 [data-theme="blue"] {

@@ -26,7 +26,8 @@ export default function About() {
                         "Playing anime openings on the piano",
                         "Playing Genshin Impact",
                         "Exploring different boba shops",
-                        "Becoming a polyglot"
+                        "Learning multiple languages—spoken, not programming!",
+                        "Mechanical keyboards"
                     ]}
                 />
                 <AboutCard
