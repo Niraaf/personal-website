@@ -4,10 +4,10 @@ import About from '@/components/About';
 export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center max-w-5xl mx-auto">
-      <section id="home">
+      <section id="home" className="w-full">
         <Hero />
       </section>
-      <section id="about">
+      <section id="about" className="w-full">
         <About />
       </section>
 
