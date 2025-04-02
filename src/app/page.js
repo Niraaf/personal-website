@@ -10,7 +10,6 @@ export default function Home() {
       <section id="about" className="w-full">
         <About />
       </section>
-
     </div>
   );
 }

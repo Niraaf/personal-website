@@ -31,12 +31,17 @@ html {
 [data-theme="blue"] {
   --background: #001f3f;
   --foreground: #ffffff;
+  --accent: #0074cc;
+  --secondary-accent: #99c2ff;
 }
 
 [data-theme="sepia"] {
   --background: #f5e6cc;
   --foreground: #5b4636;
+  --accent: #a67c52;
+  --secondary-accent: #d4b996;
 }
+
 
 body {
   background: var(--background);
