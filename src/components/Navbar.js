@@ -36,7 +36,9 @@ export default function Navbar() {
   };
 
   const handleMouseMove = (event) => {
-    if (event.clientY < 100) {
+    const dynamicMargin = Math.max(50, window.innerWidth * 0.25);
+
+    if (event.clientY < 100 && event.clientX > dynamicMargin && event.clientX < window.innerWidth - dynamicMargin) {
       mouseNearTopRef.current = true;
       setVisible(true);
     } else {
@@ -59,7 +61,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 p-4 rounded-full text-sm w-[300px] z-50 transition-all duration-400 ease-in-out shadow-lg ${visible ? "translate-y-0 w-[500px]" : "-translate-y-[200%]"}`}>
+      <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 p-4 rounded-full text-sm w-[300px] z-50 bg-[var(--accent)] text-[var(--background)] transition-all duration-400 ease-in-out shadow-lg ${visible ? "translate-y-0 w-[500px]" : "-translate-y-[200%]"}`}>
         <div className="container mx-auto flex items-center justify-between px-4">
           <ul className="flex space-x-8 w-full justify-center">
             <li className="ease-in-out transition transform">
@@ -69,7 +71,7 @@ export default function Navbar() {
               <Link href="#about">About</Link>
             </li>
             <li className="ease-in-out transition transform">
-              <Link href="#projects">Projects</Link>
+              <Link href="#work">Work</Link>
             </li>
             <li className="ease-in-out transition transform">
               <Link href="#contact">Contact</Link>

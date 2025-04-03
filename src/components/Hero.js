@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -16,9 +17,11 @@ export default function Hero() {
                     <p className="text-xl mb-8">
                         Creating tools that simplify daily life and help keep things organized. Join me on my journey to build a more efficient future!
                     </p>
-                    <button className="px-6 py-2 bg-blue-800 text-white font-semibold rounded-full">
-                        Learn More
-                    </button>
+                    <Link href="#contact">
+                        <button className="w-full px-6 py-2 bg-blue-800 text-white font-semibold rounded-full">
+                            Learn More
+                        </button>
+                    </Link>
                 </div>
 
                 {/* Right side for image */}

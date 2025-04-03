@@ -46,18 +46,21 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.about-section {
-  background: var(--secondary-accent);
-  color: var(--accent);
-}
-
-nav,
 button {
   background: var(--accent);
   color: var(--background);
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--foreground);
+  color: var(--background);
+  scale: 1.05;
 }
 
 /* Set the width of the scrollbar */
