@@ -31,17 +31,17 @@ export default function Contact() {
                 <p className="text-3xl font-medium w-1/2">
                     I would love to hear from you! Whether it&apos;s a question, collaboration, or just a friendly chat, don&apos;t hesitate to reach out.
                 </p>
-                <div className="flex items-center justify-center w-1/2 space-x-3">
-                    <button onClick={handleClickLinkedIn} className="p-3 cursor-pointer rounded-full hover:mx-5">
+                <div className="flex justify-center items-center w-1/2">
+                    <button onClick={handleClickLinkedIn} className="p-3 mx-1 cursor-pointer rounded-full hover:mx-5">
                         <FaLinkedin size={40} />
                     </button>
-                    <button onClick={handleClickGithub} className="p-3 cursor-pointer rounded-full hover:mx-5">
+                    <button onClick={handleClickGithub} className="p-3 mx-1 cursor-pointer rounded-full hover:mx-5">
                         <FaGithub size={40} />
                     </button>
-                    <button onClick={handleClickInstagram} className="p-3 cursor-pointer rounded-full hover:mx-5">
+                    <button onClick={handleClickInstagram} className="p-3 mx-1 cursor-pointer rounded-full hover:mx-5">
                         <FaInstagram size={40} />
                     </button>
-                    <button onClick={handleClickGmail} className="p-3 cursor-pointer rounded-full hover:mx-5">
+                    <button onClick={handleClickGmail} className="p-3 mx-1 cursor-pointer rounded-full hover:mx-5">
                         <SiGmail size={40} />
                     </button>
                 </div>
