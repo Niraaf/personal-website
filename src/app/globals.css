@@ -63,18 +63,12 @@ button:hover {
   scale: 1.05;
 }
 
-/* Set the width of the scrollbar */
 ::-webkit-scrollbar {
-  width: 15px; /* Width of the scrollbar */
+  width: 15px;
 }
 
-/* Customize the thumb (the draggable part of the scrollbar) */
 ::-webkit-scrollbar-thumb {
   background-color: var(--foreground);
   border-radius: 5px; 
-  transition: background-color 0.3s ease-in-out; /* Smooth transition for color */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: darkred; /* Darker red when hovered */
+  transition: background-color 0.3s ease-in-out;
 }
