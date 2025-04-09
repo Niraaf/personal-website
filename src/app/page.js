@@ -9,10 +9,10 @@ export default function Home() {
       <section id="home" className="w-full">
         <Hero />
       </section>
-      <section id="about" className="w-full">
+      <section id="about" className="w-full mb-10">
         <About />
       </section>
-      <section id="work" className="w-full">
+      <section id="work" className="w-full mb-20">
         <Work />
       </section>
       <section id="contact" className="w-full">
