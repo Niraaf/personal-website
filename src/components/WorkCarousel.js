@@ -6,9 +6,9 @@ import CarouselSlide from "./CarouselSlide";
 
 export default function WorkCarousel() {
     const slides = [
-        <CarouselSlide content="Hello there!" image="/smeagol.png" />,
-        <CarouselSlide content="This is an example!" image="/smeagol.png" />,
-        <CarouselSlide content="And this is another example." image="/smeagol.png" />
+        <CarouselSlide key="1" content="Hello there!" image="/smeagol.png" />,
+        <CarouselSlide key="2" content="This is an example!" image="/smeagol.png" />,
+        <CarouselSlide key="3" content="And this is another example." image="/smeagol.png" />
     ];
 
     const extendedSlides = [
