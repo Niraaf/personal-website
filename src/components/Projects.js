@@ -1,4 +1,4 @@
-import WorkCarousel from "./ProjectCarousel";
+import ProjectCarousel from "./ProjectCarousel";
 
 export default function Work() {
 
@@ -8,7 +8,7 @@ export default function Work() {
             <h1 className="text-7xl font-extrabold mb-10 mt-5">
                 Take a look at my projects~
             </h1>
-            <WorkCarousel />
+            <ProjectCarousel />
         </div>
     );
 }
