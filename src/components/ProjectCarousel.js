@@ -15,9 +15,15 @@ export default function WorkCarousel() {
         />,
         <CarouselSlide
             key="2"
-            title="Fusion Project"
-            content="Developing a collaborative web platform that connects individuals in the STEM field to share and find 
+            title="Project Nexus (In Progress!)"
+            content="A collaborative web platform that connects individuals in the STEM field to share and find 
                     collaborative projects and gain industry experience"
+            image="/smeagol.png"
+        />,
+        <CarouselSlide
+            key="3"
+            title="HobbyClock (In Progress!)"
+            content="An application designed to help users track the time spent on hobbies and activities, promoting a healthy and balanced lifestyle."
             image="/smeagol.png"
         />
     ];

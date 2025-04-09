@@ -14,7 +14,7 @@ export default function CarouselSlide({ title, content, image, link }) {
             </h1>
             <Image
                 src= { image }
-                alt="Smeagol"
+                alt="Project image"
                 width={1000}
                 height={1000}
                 className="object-cover h-[420px] opacity-75 hover:opacity-50 transition-opacity duration-300 ease-in-out"

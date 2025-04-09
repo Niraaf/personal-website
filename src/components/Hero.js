@@ -27,7 +27,7 @@ export default function Hero() {
                 {/* Right side for image */}
                 <div className="w-1/2 flex justify-center items-center overflow-hidden px-5">
                     <Image
-                        src="/smeagol.png"
+                        src="/umbrella.png"
                         alt="Smeagol"
                         width={1000} // You can adjust the width here
                         height={1000} // Height of the image
