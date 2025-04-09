@@ -1,6 +1,6 @@
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Work from '@/components/Work';
+import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 
 export default function Home() {
@@ -12,8 +12,8 @@ export default function Home() {
       <section id="about" className="w-full mb-10">
         <About />
       </section>
-      <section id="work" className="w-full mb-20">
-        <Work />
+      <section id="projects" className="w-full mb-20">
+        <Projects />
       </section>
       <section id="contact" className="w-full">
         <Contact />

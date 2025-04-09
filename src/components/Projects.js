@@ -1,4 +1,4 @@
-import WorkCarousel from "./WorkCarousel";
+import WorkCarousel from "./ProjectCarousel";
 
 export default function Work() {
 
@@ -6,7 +6,7 @@ export default function Work() {
     return (
         <div className="flex flex-col items-center justify-center w-full min-h-screen">
             <h1 className="text-7xl font-extrabold mb-10 mt-5">
-                Take a look at my work~
+                Take a look at my projects~
             </h1>
             <WorkCarousel />
         </div>

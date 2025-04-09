@@ -9,7 +9,7 @@ export default function CarouselSlide({ title, content, image, link }) {
 
     return (
         <div className="flex flex-col w-full h-full cursor-pointer" onClick={handleClick}>
-            <h1 className="absolute text-3xl font-bold w-full p-10 text-[var(--background)] z-1 flex flex-end">
+            <h1 className="absolute text-3xl font-bold w-full p-10 text-[var(--background)] z-1 ">
                 { title }
             </h1>
             <Image
