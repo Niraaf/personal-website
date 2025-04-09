@@ -6,9 +6,20 @@ import CarouselSlide from "./CarouselSlide";
 
 export default function WorkCarousel() {
     const slides = [
-        <CarouselSlide key="1" content="Hello there!" image="/smeagol.png" />,
-        <CarouselSlide key="2" content="This is an example!" image="/smeagol.png" />,
-        <CarouselSlide key="3" content="And this is another example." image="/smeagol.png" />
+        <CarouselSlide
+            key="1"
+            title="Personal Website"
+            content="Built with react and fully custom components. You're looking at it right now, what do you think :)"
+            image="/personalWebsite.png"
+            link="#home"
+        />,
+        <CarouselSlide
+            key="2"
+            title="Fusion Project"
+            content="Developing a collaborative web platform that connects individuals in the STEM field to share and find 
+                    collaborative projects and gain industry experience"
+            image="/smeagol.png"
+        />
     ];
 
     const extendedSlides = [
@@ -24,7 +35,7 @@ export default function WorkCarousel() {
     const timeoutDuration = 500;
 
     const handleLeftClick = () => {
-        if (isTransitioning) return;
+        if (isTransitioning || slides.length === 1) return;
 
         setCarouselPos((prev) => prev - 1);
         setIsTransitioning(true);
@@ -35,7 +46,7 @@ export default function WorkCarousel() {
     };
 
     const handleRightClick = () => {
-        if (isTransitioning) return;
+        if (isTransitioning || slides.length === 1) return;
 
         setCarouselPos((prev) => prev + 1);
         setIsTransitioning(true);
@@ -53,7 +64,7 @@ export default function WorkCarousel() {
                     <FaArrowLeft size={30} />
                 </button>
 
-                <div className="w-full h-full overflow-hidden rounded-3xl">
+                <div className="w-full h-full overflow-hidden rounded-3xl hover:scale-102 shadow-lg transition-transform duration-300">
                     <div className={`flex ${isTransitioning === true ? "transition-all ease-in-out" : ""}`} style={{ transform: `translateX(-${carouselPos * 100}%)`, ...(isTransitioning ? { transitionDuration: `${timeoutDuration}ms` } : {}) }}>
                         {extendedSlides.map((slide, idx) => {
                             const normalizedIdx = idx === 0 ? extendedSlides.length - 2 : idx === extendedSlides.length - 1 ? 1 : idx;
@@ -79,9 +90,9 @@ export default function WorkCarousel() {
                 {slides.map((_, index) => (
                     <div
                         key={index}
-                        className={`w-5 h-5 rounded-full transition-all duration-300 ${index === ((carouselPos % slides.length) + 2) % slides.length
-                                ? 'bg-[var(--foreground)] scale-125'
-                                : 'bg-[var(--accent)]'
+                        className={`w-5 h-5 rounded-full transition-all duration-300 ${index === ((carouselPos % slides.length) + slides.length - 1) % slides.length
+                            ? 'bg-[var(--foreground)] scale-125'
+                            : 'bg-[var(--accent)]'
                             }`}
                     ></div>
                 ))}
