@@ -47,31 +47,46 @@ export default function WorkCarousel() {
 
 
     return (
-        <div className="flex items-center w-full h-full space-x-4">
-            <button className="p-3 rounded-full" onClick={handleLeftClick}>
-                <FaArrowLeft size={30} />
-            </button>
+        <div className="flex flex-col w-full h-full">
+            <div className="flex items-center w-full h-full space-x-4">
+                <button className="p-3 rounded-full" onClick={handleLeftClick}>
+                    <FaArrowLeft size={30} />
+                </button>
 
-            <div className="w-full h-full overflow-hidden rounded-3xl">
-                <div className={`flex ${isTransitioning === true ? "transition-all ease-in-out" : ""}`} style={{ transform: `translateX(-${carouselPos * 100}%)`, ...(isTransitioning ? { transitionDuration: `${timeoutDuration}ms` } : {}) }}>
-                    {extendedSlides.map((slide, idx) => {
-                        const normalizedIdx = idx === 0 ? extendedSlides.length - 2 : idx === extendedSlides.length - 1 ? 1 : idx;
-                        return (
-                            <div
-                                key={idx}
-                                className={`w-full h-120 flex-shrink-0 text-[var(--background)] ${normalizedIdx % 2 !== 0 ? "bg-[var(--foreground)]" : "bg-[var(--accent)]"
-                                    }`}
-                            >
-                                {slide}
-                            </div>
-                        )
-                    })}
+                <div className="w-full h-full overflow-hidden rounded-3xl">
+                    <div className={`flex ${isTransitioning === true ? "transition-all ease-in-out" : ""}`} style={{ transform: `translateX(-${carouselPos * 100}%)`, ...(isTransitioning ? { transitionDuration: `${timeoutDuration}ms` } : {}) }}>
+                        {extendedSlides.map((slide, idx) => {
+                            const normalizedIdx = idx === 0 ? extendedSlides.length - 2 : idx === extendedSlides.length - 1 ? 1 : idx;
+                            return (
+                                <div
+                                    key={idx}
+                                    className={`w-full h-120 flex-shrink-0 text-[var(--background)] ${normalizedIdx % 2 !== 0 ? "bg-[var(--foreground)]" : "bg-[var(--accent)]"
+                                        }`}
+                                >
+                                    {slide}
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
+
+                <button className="p-3 rounded-full" onClick={handleRightClick}>
+                    <FaArrowRight size={30} />
+                </button>
             </div>
 
-            <button className="p-3 rounded-full" onClick={handleRightClick}>
-                <FaArrowRight size={30} />
-            </button>
+            <div className="flex justify-center w-full space-x-2 mt-5">
+                {slides.map((_, index) => (
+                    <div
+                        key={index}
+                        className={`w-5 h-5 rounded-full transition-all duration-300 ${index === ((carouselPos % slides.length) + 2) % slides.length
+                                ? 'bg-[var(--foreground)] scale-125'
+                                : 'bg-[var(--accent)]'
+                            }`}
+                    ></div>
+                ))}
+            </div>
         </div>
+
     );
 }
