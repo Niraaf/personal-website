@@ -70,7 +70,7 @@ export default function WorkCarousel() {
                     <FaArrowLeft size={30} />
                 </button>
 
-                <div className="w-full h-full overflow-hidden rounded-3xl hover:scale-102 shadow-lg transition-transform duration-300">
+                <div className="w-full h-full overflow-hidden rounded-3xl hover:scale-102 shadow-xl transition-transform duration-300">
                     <div className={`flex ${isTransitioning === true ? "transition-all ease-in-out" : ""}`} style={{ transform: `translateX(-${carouselPos * 100}%)`, ...(isTransitioning ? { transitionDuration: `${timeoutDuration}ms` } : {}) }}>
                         {extendedSlides.map((slide, idx) => {
                             const normalizedIdx = idx === 0 ? extendedSlides.length - 2 : idx === extendedSlides.length - 1 ? 1 : idx;

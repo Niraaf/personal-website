@@ -10,9 +10,9 @@ export default function AboutCard({ name, bulletPoints }) {
     };
 
     return (
-        <div className="relative w-100 h-80 cursor-pointer perspective-1000" onClick={handleClick}>
+        <div className="w-100 h-80 cursor-pointer perspective-1000" onClick={handleClick}>
             <div
-                className={`relative w-full h-full rounded-3xl transition-transform duration-500 hover:scale-110 transform-3d text-[var(--background)] ${
+                className={`w-full h-full rounded-3xl transition-transform duration-500 hover:scale-110 transform-3d text-[var(--background)] shadow-xl ${
                     flipped ? "rotate-y-180" : ""
                 }`}
             >
