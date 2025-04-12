@@ -55,6 +55,7 @@ button {
   font-weight: bold;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  box-shadow: var(--shadow-lg);
 }
 
 button:hover {
