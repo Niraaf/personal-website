@@ -15,10 +15,10 @@ export default function WorkCarousel() {
         />,
         <CarouselSlide
             key="2"
-            title="Project Nexus (In Progress!)"
+            title="Reel In"
             content="A collaborative web platform that connects individuals in the STEM field to share and find 
                     collaborative projects and gain industry experience"
-            image="/smeagol.png"
+            image="/reelin.png"
         />,
         <CarouselSlide
             key="3"
