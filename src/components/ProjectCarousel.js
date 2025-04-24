@@ -22,9 +22,9 @@ export default function WorkCarousel() {
         />,
         <CarouselSlide
             key="3"
-            title="HobbyClock (In Progress!)"
-            content="An application designed to help users track the time spent on hobbies and activities, promoting a healthy and balanced lifestyle."
-            image="/smeagol.png"
+            title="Repple (In Progress!)"
+            content="A workout timer and routine app that helps users build custom workouts, track sessions with guided timers, and log performance data — designed for a seamless fitness experience and progress tracking."
+            image="/workInProgress.jpg"
         />
     ];
 
