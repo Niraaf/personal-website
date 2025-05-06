@@ -18,13 +18,13 @@ export default function About() {
                         paddingBottom: '0.25rem',
                     }}
                 >
-                    What's up!
+                    What&apos;s up!
                 </h2>
                 <p
                     className="text-xl mb-12"
                     style={{ opacity: 0.85 }}
                 >
-                    Learn more about me and my interests here :3
+                    Learn more about me and my interests here~
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {[
