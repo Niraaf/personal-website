@@ -24,7 +24,7 @@ export default function WorkCarousel() {
             key="3"
             title="Repple (In Progress!)"
             content="A workout timer and routine app that helps users build custom workouts, track sessions with guided timers, and log performance data — designed for a seamless fitness experience and progress tracking."
-            image="/workInProgress.jpg"
+            image="/repple.png"
         />
     ];
 
