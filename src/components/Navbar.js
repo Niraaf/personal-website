@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Navbar() {
   {/* State to manage the current theme */ }
   const [currentTheme, setCurrentTheme] = useState('light');
-  const themes = ['light', 'dark', 'blue', 'sepia'];
+  const themes = ['light', 'ocean', 'twilight', 'aurora', 'desert'];
 
   const changeTheme = () => {
     const nextTheme = themes[(themes.indexOf(currentTheme) + 1) % themes.length];

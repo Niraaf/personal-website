@@ -64,43 +64,57 @@ export default function WorkCarousel() {
 
 
     return (
-        <div className="flex flex-col w-full h-full">
-            <div className="flex items-center w-full h-full space-x-4">
-                <button className="p-3 rounded-full" onClick={handleLeftClick}>
-                    <FaArrowLeft size={30} />
+        <div className="flex flex-col w-full h-full items-center px-6">
+            <div className="flex items-center w-full h-full space-x-4 max-w-5xl">
+                <button
+                    className="p-3 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:scale-110 hover:bg-[var(--accent)] transition-all duration-300"
+                    onClick={handleLeftClick}
+                >
+                    <FaArrowLeft size={24} />
                 </button>
 
-                <div className="w-full h-full overflow-hidden rounded-3xl hover:scale-102 shadow-xl transition-transform duration-300">
-                    <div className={`flex ${isTransitioning === true ? "transition-all ease-in-out" : ""}`} style={{ transform: `translateX(-${carouselPos * 100}%)`, ...(isTransitioning ? { transitionDuration: `${timeoutDuration}ms` } : {}) }}>
+                <div className="w-full h-full overflow-hidden rounded-3xl shadow-2xl hover:shadow-[0_0_40px_rgba(0,0,0,0.25)] transition-all duration-500">
+                    <div
+                        className={`flex ${isTransitioning ? "transition-all ease-in-out" : ""}`}
+                        style={{
+                            transform: `translateX(-${carouselPos * 100}%)`,
+                            ...(isTransitioning ? { transitionDuration: `${timeoutDuration}ms` } : {})
+                        }}
+                    >
                         {extendedSlides.map((slide, idx) => {
                             const normalizedIdx = idx === 0 ? extendedSlides.length - 2 : idx === extendedSlides.length - 1 ? 1 : idx;
                             return (
                                 <div
                                     key={idx}
-                                    className={`w-full h-120 flex-shrink-0 text-[var(--background)] ${normalizedIdx % 2 !== 0 ? "bg-[var(--foreground)]" : "bg-[var(--accent)]"
-                                        }`}
+                                    className={`w-full h-120 flex-shrink-0 backdrop-blur-md text-[var(--background)] ${normalizedIdx % 2 !== 0
+                                            ? "bg-[var(--foreground)]/70"
+                                            : "bg-[var(--accent)]/70"
+                                        } rounded-3xl overflow-hidden`}
                                 >
                                     {slide}
                                 </div>
-                            )
+                            );
                         })}
                     </div>
                 </div>
 
-                <button className="p-3 rounded-full" onClick={handleRightClick}>
-                    <FaArrowRight size={30} />
+                <button
+                    className="p-3 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:scale-110 hover:bg-[var(--accent)] transition-all duration-300"
+                    onClick={handleRightClick}
+                >
+                    <FaArrowRight size={24} />
                 </button>
             </div>
 
-            <div className="flex justify-center w-full space-x-2 mt-5">
+            <div className="flex justify-center w-full space-x-3 mt-5">
                 {slides.map((_, index) => (
                     <div
                         key={index}
-                        className={`w-5 h-5 rounded-full transition-all duration-300 ${index === ((carouselPos % slides.length) + slides.length - 1) % slides.length
-                            ? 'bg-[var(--foreground)] scale-125'
-                            : 'bg-[var(--accent)]'
+                        className={`w-4 h-4 rounded-full transition-all duration-300 ${index === ((carouselPos % slides.length) + slides.length - 1) % slides.length
+                                ? 'bg-[var(--foreground)] scale-125 shadow-md'
+                                : 'bg-[var(--accent)]'
                             }`}
-                    ></div>
+                    />
                 ))}
             </div>
         </div>

@@ -2,55 +2,77 @@ import AboutCard from "./AboutCard";
 
 export default function About() {
     return (
-        <div className="flex flex-col items-center pt-20 min-h-screen w-full p-4 rounded-3xl bg-[var(--secondary-accent)] text-[var(--accent)]" >
-            <h1 className="text-7xl font-extrabold mb-4">
-                What&apos;s up!
-            </h1>
-            <p className="text-3xl font-medium mb-6">
-                Learn more about me and my interests here :3
-            </p>
-            <div className="w-full flex flex-wrap gap-15 justify-center items-center py-20 px-15">
-                <AboutCard
-                    name="Tech & Coding"
-                    bulletPoints={[
-                        "CS major at UCI",
-                        "Love web dev & backend!",
-                        "Always learning new technologies",
-                        "Familiar with Python, C++, JS, and more"
-                    ]}
-                />
-                <AboutCard
-                    name="Hobbies & Interests"
-                    bulletPoints={[
-                        "Journaling since 2017",
-                        "Playing classical pieces and anime songs on the piano",
-                        "Co-op video games",
-                        "Exploring different boba shops",
-                        "Learning multiple languages—spoken, not programming!",
-                        "Mechanical keyboards"
-                    ]}
-                />
-                <AboutCard
-                    name="Athleticism and Sports"
-                    bulletPoints={[
-                        "I love running!",
-                        "Calisthenics enthusiast",
-                        "Part of UCI's roundnet (spike ball) club",
-                        "Trying to do a handstand"
-                    ]}
-                />
-                <AboutCard
-                    name="Fun Facts"
-                    bulletPoints={[
-                        "Filipino American",
-                        "Loves sushi 🍣",
-                        "Has a 4:24 mile time",
-                        "High school cross country team 16th in the nation in 2022"
-                    ]}
-                />
+        <section
+            className="relative flex flex-col items-center justify-center min-h-screen p-20 max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-xl"
+            style={{
+                color: "var(--background)",
+                background: `linear-gradient(to bottom left, var(--secondary-accent) 0%, var(--foreground) 100%)`,
+            }}
+        >
 
+            <div className="relative z-10 w-full max-w-7xl">
+                <h2
+                    className="text-5xl font-bold mb-4 inline-block"
+                    style={{
+                        borderBottom: "4px solid var(--accent)",
+                        paddingBottom: '0.25rem',
+                    }}
+                >
+                    What's up!
+                </h2>
+                <p
+                    className="text-xl mb-12"
+                    style={{ opacity: 0.85 }}
+                >
+                    Learn more about me and my interests here :3
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {[
+                        {
+                            name: "Tech & Coding",
+                            bulletPoints: [
+                                "CS major at UCI",
+                                "Love web dev & backend!",
+                                "Always learning new technologies",
+                                "Familiar with Python, C++, JS, and more"
+                            ]
+                        },
+                        {
+                            name: "Hobbies & Interests",
+                            bulletPoints: [
+                                "Journaling since 2017",
+                                "Playing classical pieces and anime songs on the piano",
+                                "Co-op video games",
+                                "Exploring different boba shops"
+                            ]
+                        },
+                        {
+                            name: "Athleticism & Sports",
+                            bulletPoints: [
+                                "I love running!",
+                                "Calisthenics enthusiast",
+                                "UCI Spikeball club member",
+                                "Working towards a handstand"
+                            ]
+                        },
+                        {
+                            name: "Fun Facts",
+                            bulletPoints: [
+                                "Filipino American",
+                                "Sushi aficionado 🍣",
+                                "4:24 mile personal best",
+                                "High school XC team: #16 nationwide"
+                            ]
+                        }
+                    ].map((card, idx) => (
+                        <AboutCard
+                            key={idx}
+                            name={card.name}
+                            bulletPoints={card.bulletPoints}
+                        />
+                    ))}
+                </div>
             </div>
-
-        </div>
-    )
+        </section>
+    );
 }

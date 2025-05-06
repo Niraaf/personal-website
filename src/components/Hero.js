@@ -3,38 +3,65 @@ import Link from "next/link";
 
 export default function Hero() {
     return (
-        <div className="min-h-screen flex items-center justify-center">
-            {/* Flex container for text and image */}
-            <div className="flex w-full mx-auto px-4">
-                {/* Left side for text */}
-                <div className="flex flex-col justify-center w-1/2 text-left px-5">
-                    <h1 className="text-7xl font-extrabold mb-4">
-                        Farin Soriano
-                    </h1>
-                    <p className="text-3xl font-medium mb-6">
-                        Aspiring Software Engineer, Web Developer, Innovator.
-                    </p>
-                    <p className="text-xl mb-8">
-                        Creating tools that simplify daily life and help keep things organized. Join me on my journey to build a more efficient future!
-                    </p>
-                    <Link href="#contact">
-                        <button className="w-full px-6 py-2 bg-blue-800 text-white font-semibold rounded-full">
-                            Learn More
-                        </button>
-                    </Link>
-                </div>
-
-                {/* Right side for image */}
-                <div className="w-1/2 flex justify-center items-center overflow-hidden px-5">
+        <section className="relative flex items-center justify-center h-screen overflow-hidden">
+            {/* Radial stars background */}
+            <div
+                className="absolute inset-0 z-0 pointer-events-none"
+                style={{
+                    backgroundColor: "var(--background)",
+                    maskImage: "radial-gradient(circle at center, black 50%, transparent 75%)",
+                    WebkitMaskImage: "radial-gradient(circle at center, black 50%, transparent 75%)",
+                }}
+            >
+                <div
+                    style={{
+                        backgroundImage: "radial-gradient(var(--foreground) 1.7px, transparent 1.7px)",
+                        backgroundSize: "32px 32px",
+                        width: "100%",
+                        height: "100%",
+                        opacity: 0.08,
+                        animation: "moveStars 40s linear infinite",
+                    }}
+                />
+            </div>
+            {/* Content */}
+            <div className="relative flex flex-col md:flex-row items-center max-w-7xl mx-auto px-8">
+                {/* Image in circle frame */}
+                <div
+                    className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 shadow-xl mb-8 md:mb-0 md:mr-12 transform transition-transform duration-700 hover:scale-105"
+                    style={{ borderColor: "var(--accent)" }}
+                >
                     <Image
                         src="/umbrella.png"
-                        alt="Smeagol"
-                        width={1000} // You can adjust the width here
-                        height={1000} // Height of the image
-                        className="object-cover rounded-lg shadow-lg w-full h-[430px]"
+                        alt="Profile image"
+                        fill
+                        className="object-cover"
                     />
                 </div>
+
+                {/* Text block */}
+                <div className="text-center md:text-left space-y-4">
+                    <h1
+                        className="text-6xl md:text-7xl font-extrabold"
+                        style={{ color: "var(--foreground)" }}
+                    >
+                        Farin Soriano
+                    </h1>
+                    <p className="text-lg md:text-2xl" style={{ color: "var(--foreground)" }}>
+                        Building creative web experiences and intuitive tools.
+                    </p>
+                    <Link
+                        href="#contact"
+                        className="inline-block px-8 py-3 font-bold rounded-full shadow-lg transition-transform transform hover:scale-105"
+                        style={{
+                            backgroundColor: "var(--accent)",
+                            color: "var(--background)"
+                        }}
+                    >
+                        Let’s Chat
+                    </Link>
+                </div>
             </div>
-        </div>
+        </section>
     );
 }

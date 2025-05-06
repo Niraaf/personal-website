@@ -8,19 +8,27 @@ export default function CarouselSlide({ title, content, image, link }) {
     };
 
     return (
-        <div className="flex flex-col w-full h-full cursor-pointer" onClick={handleClick}>
-            <h1 className="absolute text-3xl font-bold w-full p-10 text-[var(--background)] z-1 ">
-                { title }
+        <div
+            className="relative flex flex-col w-full h-full cursor-pointer group overflow-hidden"
+            onClick={handleClick}
+        >
+            {/* Title Overlay */}
+            <h1 className="absolute top-6 left-6 text-3xl font-bold text-[var(--background)] backdrop-blur-sm bg-[var(--foreground)]/60 px-4 py-2 rounded-xl z-10">
+                {title}
             </h1>
+
+            {/* Project Image */}
             <Image
-                src= { image }
+                src={image}
                 alt="Project image"
                 width={1000}
                 height={1000}
-                className="object-cover h-[420px] opacity-75 hover:opacity-50 transition-opacity duration-300 ease-in-out"
+                className="object-cover h-[420px] w-full transition-opacity duration-300 ease-in-out group-hover:opacity-60"
             />
-            <div className="flex items-center w-full h-full px-10">
-                { content }
+
+            {/* Content Text */}
+            <div className="flex items-center justify-center w-full h-full px-8 text-lg leading-relaxed text-[var(--background)] font-medium">
+                {content}
             </div>
         </div>
 

@@ -5,63 +5,120 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Default (Light Mode) */
+/* Base fallbacks */
 :root {
   --background: #F8F5E9;
-  --foreground: #597E52;
+  --foreground: #2F2F2F;
   --accent: #C6A969;
-  --secondary-accent: #F1E4C3;
+  --secondary-accent: #597E52;
+
+  /* subtle shifts around the base */
+  --bg-grad-1: #F8F5E9;
+  /* base */
+  --bg-grad-2: #F1E6DD;
+  /* −5% brightness & warmth */
+  --bg-grad-3: #FAF8EE;
+  /* +5% brightness */
 }
 
-/* Custom themes */
+/* Light (browns → greens) */
 [data-theme="light"] {
   --background: #F8F5E9;
-  --foreground: #597E52;
-  --accent: #C6A969;
-  --secondary-accent: #F1E4C3;
+  --foreground: #2F2F2F;
+  --accent: #A17B52;
+  --secondary-accent: #597E52;
+
+  --bg-grad-1: #F8F5E9;
+  --bg-grad-2: #F3EADD;
+  --bg-grad-3: #FBF9EE;
 }
 
-[data-theme="dark"] {
-  --background: #1D1616;
-  --foreground: #D84040;
-  --accent: #EEEEEE;
-  --secondary-accent: #8E1616;
+/* Desert */
+[data-theme="desert"] {
+  --background: #EDC9AF;
+  --foreground: #4A2E19;
+  --accent: #D99058;
+  --secondary-accent: #C17B45;
+
+  --bg-grad-1: #EDC9AF;
+  --bg-grad-2: #E6BDA3;
+  --bg-grad-3: #F2D6C1;
 }
 
-[data-theme="blue"] {
-  --background: #001f3f;
-  --foreground: #ffffff;
-  --accent: #0074cc;
-  --secondary-accent: #99c2ff;
+/* Aurora */
+[data-theme="aurora"] {
+  --background: #004F2D;
+  --foreground: #F0F8FF;
+  --accent: #BA55D3;
+  --secondary-accent: #7FFFD4;
+
+  --bg-grad-1: #004F2D;
+  --bg-grad-2: #005438;
+  --bg-grad-3: #005E43;
 }
 
-[data-theme="sepia"] {
-  --background: #f5e6cc;
-  --foreground: #5b4636;
-  --accent: #a67c52;
-  --secondary-accent: #d4b996;
+/* Twilight */
+[data-theme="twilight"] {
+  --background: #0D1B2A;
+  --foreground: #F8F8FF;
+  --accent: #FF77AA;
+  --secondary-accent: #AA33FF;
+
+  --bg-grad-1: #0D1B2A;
+  --bg-grad-2: #112136;
+  --bg-grad-3: #162844;
 }
 
+/* Ocean */
+[data-theme="ocean"] {
+  --background: #005F73;
+  --foreground: #E0F7FA;
+  --accent: #00ACC1;
+  --secondary-accent: #5DD8C4;
 
+  --bg-grad-1: #005F73;
+  --bg-grad-2: #006A7F;
+  --bg-grad-3: #00758B;
+}
+
+/* Subtle animated diagonal gradient */
 body {
-  background: var(--background);
+  background: linear-gradient(135deg,
+      var(--bg-grad-1),
+      var(--bg-grad-2),
+      var(--bg-grad-3)) no-repeat fixed;
+  background-size: 200% 200%;
+  animation: gradientShiftDiagonal 15s ease infinite;
   color: var(--foreground);
-  transition: all 0.3s ease-in-out;
+  transition: color 0.3s ease;
+}
+
+@keyframes gradientShiftDiagonal {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 button {
   background: var(--accent);
   color: var(--background);
   font-weight: bold;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease, background 0.3s ease;
   cursor: pointer;
   box-shadow: var(--shadow-lg);
 }
 
 button:hover {
-  background: var(--foreground);
-  color: var(--background);
-  scale: 1.05;
+  background: var(--secondary-accent);
+  transform: scale(1.05);
 }
 
 ::-webkit-scrollbar {
@@ -70,6 +127,6 @@ button:hover {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--foreground);
-  border-radius: 5px; 
-  transition: background-color 0.3s ease-in-out;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
